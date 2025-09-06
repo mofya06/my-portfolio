@@ -49,13 +49,16 @@ const About = () => {
                 </div>
               </div>
             </AnimateOnScroll>
-            <AnimateOnScroll className="relative" style={{ transitionDelay: '200ms' }}>
-              {/* --- ✅  IMPROVEMENT: Replaced the stock photo with your personal profile picture --- */}
-              <img
-                  src="/profile.jpg"
-                  alt="Chisanga Mofya"
-                  className="rounded-lg shadow-xl w-full h-auto object-cover"
-              />
+            <AnimateOnScroll style={{ transitionDelay: '200ms' }}>
+              {/* --- ✅ IMPROVEMENT: Added an animated gradient glow effect to the profile picture --- */}
+              <div className="relative">
+                <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 blur-lg opacity-75 animate-gradient-rotate bg-[length:200%_200%]"></div>
+                <img
+                    src="/profile.jpg"
+                    alt="Chisanga Mofya"
+                    className="relative rounded-lg shadow-xl w-full h-auto object-cover"
+                />
+              </div>
             </AnimateOnScroll>
           </div>
 
