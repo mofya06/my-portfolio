@@ -1,4 +1,5 @@
 import { ArrowDown, Github, Mail } from 'lucide-react';
+import AnimatedBackground from './AnimatedBackground';
 
 const Hero = () => {
   const socialLinks = [
@@ -9,7 +10,9 @@ const Hero = () => {
   // The unused 'scrollToAbout' function has been removed.
 
   return (
-      <section id="home" className="min-h-screen flex items-center justify-center relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
+      // Added `overflow-hidden` to prevent scrollbars from the canvas animation
+      <section id="home" className="min-h-screen flex items-center justify-center relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 overflow-hidden">
+        <AnimatedBackground />
         {/* --- ✅ IMPROVEMENT: Added staggered animations for a more dynamic entry --- */}
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
