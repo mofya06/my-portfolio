@@ -31,26 +31,26 @@ const Portfolio = () => {
       title: 'Shiteni Web App',
       description: 'A MultiService Website, It Includes E-Commerce, Hotel Bookings, Bus Ticket and more.',
       longDescription: 'Developed a comprehensive task management application with real-time collaboration features, booking functionality, user management, and advanced filtering options. Includes progress tracking and detailed analytics.',
-      image: 'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=600',
+      image: '/shiteni.png',
       technologies: ['TypeScript', 'Node.js', 'MongoDB', 'Socket.io', 'Docker'],
 
     },
     {
       id: 3,
-      title: 'Weather Analytics Dashboard',
-      description: 'A data visualization dashboard for weather patterns and climate analysis.',
-      longDescription: 'Created an interactive dashboard for visualizing weather data with advanced charts, predictive analytics, and historical data comparison. Features include location-based forecasts and climate trend analysis.',
-      image: 'https://images.pexels.com/photos/3184454/pexels-photo-3184454.jpeg?auto=compress&cs=tinysrgb&w=600',
-      technologies: ['React', 'D3.js', 'Python', 'Flask', 'Chart.js'],
+      title: 'ChangZ Events ',
+      description: 'A portfolio for a tent making company.',
+      longDescription: 'Created an attractive and relative website for a tent making company, it features their unique services and the works they have done.',
+      image: '/changz.png',
+      technologies: ['React', 'TypeScript', 'TailwindCSS'],
 
     },
     {
       id: 4,
-      title: 'AI-Powered Chat Application',
-      description: 'Real-time chat app with AI assistant integration and smart features.',
-      longDescription: 'Built a modern chat application with AI-powered features including smart replies, message summarization, and language translation. Includes file sharing, group management, and advanced search capabilities.',
+      title: 'AD_PROM_REGI_LTD',
+      description: 'A portfolio for a company',
+      longDescription: 'This portfolio is for a service offering company which helps with the registration of a business to PACRA and so on',
       image: 'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=600',
-      technologies: ['React', 'WebSocket', 'OpenAI API', 'Redis', 'AWS'],
+      technologies: ['React', 'WebSocket', 'TailwindCSS'],
 
     }
   ];
