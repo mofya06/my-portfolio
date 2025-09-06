@@ -57,11 +57,11 @@ const Portfolio = () => {
   ];
 
   return (
-      <section id="portfolio" className="py-20 bg-slate-50">
+      <section id="portfolio" className="py-20 bg-slate-50 dark:bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimateOnScroll className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">Portfolio</h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 dark:text-slate-200 mb-6">Portfolio</h2>
+            <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
               A showcase of projects that demonstrate my expertise in full-stack development,
               UI/UX design, and problem-solving capabilities.
             </p>
@@ -71,7 +71,7 @@ const Portfolio = () => {
             {projects.map((project, index) => (
                 <AnimateOnScroll key={project.id} style={{ transitionDelay: `${index * 100}ms` }}>
                   <div
-                      className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer h-full"
+                      className="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer h-full"
                       onClick={() => setSelectedProject(project)}
                   >
                     <img
@@ -80,11 +80,11 @@ const Portfolio = () => {
                         className="w-full h-48 object-cover"
                     />
                     <div className="p-6">
-                      <h3 className="text-xl font-semibold text-slate-800 mb-2">{project.title}</h3>
-                      <p className="text-slate-600 mb-4">{project.description}</p>
+                      <h3 className="text-xl font-semibold text-slate-800 dark:text-slate-200 mb-2">{project.title}</h3>
+                      <p className="text-slate-600 dark:text-slate-400 mb-4">{project.description}</p>
                       <div className="flex flex-wrap gap-2 mb-4">
                         {project.technologies.slice(0, 3).map((tech) => (
-                            <span key={tech} className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">
+                            <span key={tech} className="bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 px-2 py-1 rounded text-sm">
                         {tech}
                       </span>
                         ))}
@@ -103,14 +103,14 @@ const Portfolio = () => {
 
           {/* Project Modal */}
           {selectedProject && (
-              <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 z-50 animate-fade-in-up">
-                <div className="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+              <div className="fixed inset-0 bg-black/70 dark:bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 z-50 animate-fade-in-up">
+                <div className="bg-white dark:bg-slate-800 rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
                   <div className="p-6 md:p-8">
                     <div className="flex justify-between items-start mb-6">
-                      <h3 className="text-2xl md:text-3xl font-bold text-slate-800">{selectedProject.title}</h3>
+                      <h3 className="text-2xl md:text-3xl font-bold text-slate-800 dark:text-slate-200">{selectedProject.title}</h3>
                       <button
                           onClick={() => setSelectedProject(null)}
-                          className="text-slate-500 hover:text-slate-800 transition-colors duration-200"
+                          className="text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-white transition-colors duration-200"
                       >
                         <X size={28} />
                       </button>
@@ -122,13 +122,13 @@ const Portfolio = () => {
                         className="w-full h-64 object-cover rounded-lg mb-6"
                     />
 
-                    <p className="text-slate-700 mb-6 leading-relaxed">{selectedProject.longDescription}</p>
+                    <p className="text-slate-700 dark:text-slate-300 mb-6 leading-relaxed">{selectedProject.longDescription}</p>
 
                     <div className="mb-6">
-                      <h4 className="text-lg font-semibold text-slate-800 mb-3">Technologies Used</h4>
+                      <h4 className="text-lg font-semibold text-slate-800 dark:text-slate-200 mb-3">Technologies Used</h4>
                       <div className="flex flex-wrap gap-2">
                         {selectedProject.technologies.map((tech) => (
-                            <span key={tech} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                            <span key={tech} className="bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 px-3 py-1 rounded-full text-sm font-medium">
                         {tech}
                       </span>
                         ))}

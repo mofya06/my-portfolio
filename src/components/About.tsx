@@ -12,11 +12,11 @@ const About = () => {
   ];
 
   return (
-      <section id="about" className="py-20 bg-white">
+      <section id="about" className="py-20 bg-white dark:bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimateOnScroll className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">About Me</h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 dark:text-slate-200 mb-6">About Me</h2>
+            <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
               I'm a Computer Science graduate, Who enjoys Networking, Mobile App Development and full-stack developer with experience creating digital solutions
               that make a difference. I love turning complex problems into elegant, efficient code.
             </p>
@@ -25,13 +25,13 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
             <AnimateOnScroll>
               <div>
-                <h3 className="text-2xl font-bold text-slate-800 mb-6">My Journey</h3>
-                <p className="text-slate-600 mb-4 leading-relaxed">
+                <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-6">My Journey</h3>
+                <p className="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">
                   Started my journey in computer science at the Mulungushi University in Zambia, where I Learned
                   software development and problem-solving. I've worked on various projects ranging from web applications
                   to mobile solutions, always focusing on clean code and user experience.
                 </p>
-                <p className="text-slate-600 mb-6 leading-relaxed">
+                <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
                   I believe in continuous learning and staying up-to-date with the latest technologies
                   and development practices. When I'm not coding, I usually do some other hobbies such as,
                   Drawing, Playing Soccer or Gaming sometimes.
@@ -42,7 +42,7 @@ const About = () => {
                 </p>
                 <div className="flex flex-wrap gap-3">
                   {['JavaScript', 'TypeScript', 'React', 'Node.js', 'Python', 'MongoDB'].map((tech) => (
-                      <span key={tech} className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                      <span key={tech} className="bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 px-3 py-1 rounded-full text-sm font-medium">
                     {tech}
                   </span>
                   ))}
@@ -61,17 +61,17 @@ const About = () => {
 
           <div>
             <AnimateOnScroll className="text-center mb-12">
-              <h3 className="text-2xl font-bold text-slate-800">Skills & Expertise</h3>
+              <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200">Skills & Expertise</h3>
             </AnimateOnScroll>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {skills.map((skill, index) => (
                   <AnimateOnScroll key={index} style={{ transitionDelay: `${index * 100}ms` }}>
-                    <div className="bg-slate-50 p-6 rounded-xl hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 h-full">
-                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                      <skill.icon className="w-6 h-6 text-blue-600" />
+                    <div className="bg-slate-50 dark:bg-slate-800 p-6 rounded-xl hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 h-full">
+                    <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/50 rounded-lg flex items-center justify-center mb-4">
+                      <skill.icon className="w-6 h-6 text-blue-600 dark:text-blue-400" />
                     </div>
-                    <h4 className="text-lg font-semibold text-slate-800 mb-2">{skill.name}</h4>
-                    <p className="text-slate-600">{skill.description}</p>
+                    <h4 className="text-lg font-semibold text-slate-800 dark:text-slate-200 mb-2">{skill.name}</h4>
+                    <p className="text-slate-600 dark:text-slate-400">{skill.description}</p>
                   </div>
                   </AnimateOnScroll>
               ))}

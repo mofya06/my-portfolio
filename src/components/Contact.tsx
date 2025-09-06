@@ -76,11 +76,11 @@ const Contact = () => {
   ];
 
   return (
-      <section id="contact" className="py-20 bg-slate-50">
+      <section id="contact" className="py-20 bg-slate-50 dark:bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimateOnScroll className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">Get In Touch</h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 dark:text-slate-200 mb-6">Get In Touch</h2>
+            <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
               Ready to start your next project? Let's discuss how we can work together to bring your ideas to life.
             </p>
           </AnimateOnScroll>
@@ -89,8 +89,8 @@ const Contact = () => {
             {/* Contact Information */}
             <AnimateOnScroll>
               <div>
-                <h3 className="text-2xl font-bold text-slate-800 mb-8">Let's Connect</h3>
-                <p className="text-slate-600 mb-8 leading-relaxed">
+                <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-8">Let's Connect</h3>
+                <p className="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
                   I'm always open to discussing new opportunities, interesting projects,
                   or just having a chat about technology and development. Feel free to reach out!
                 </p>
@@ -98,29 +98,29 @@ const Contact = () => {
                 <div className="space-y-6">
                   {contactInfo.map((info) => (
                       <div key={info.label} className="flex items-center gap-4">
-                        <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                          <info.icon className="w-6 h-6 text-blue-600" />
+                        <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/50 rounded-lg flex items-center justify-center">
+                          <info.icon className="w-6 h-6 text-blue-600 dark:text-blue-400" />
                         </div>
                         <div>
-                          <p className="font-medium text-slate-800">{info.label}</p>
+                          <p className="font-medium text-slate-800 dark:text-slate-300">{info.label}</p>
                           {info.href ? (
                               <a
                                   href={info.href}
-                                  className="text-slate-600 hover:text-blue-600 transition-colors duration-200"
+                                  className="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
                               >
                                 {info.value}
                               </a>
                           ) : (
-                              <p className="text-slate-600">{info.value}</p>
+                              <p className="text-slate-600 dark:text-slate-400">{info.value}</p>
                           )}
                         </div>
                       </div>
                   ))}
                 </div>
 
-                <div className="mt-8 p-6 bg-blue-50 rounded-xl">
-                  <h4 className="font-semibold text-slate-800 mb-2">Available for:</h4>
-                  <ul className="text-slate-600 space-y-1">
+                <div className="mt-8 p-6 bg-blue-50 dark:bg-slate-800 rounded-xl">
+                  <h4 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Available for:</h4>
+                  <ul className="text-slate-600 dark:text-slate-400 space-y-1">
                     <li>• Full-time opportunities</li>
                     <li>• Freelance projects</li>
                     <li>• Consulting & mentoring</li>
@@ -131,21 +131,21 @@ const Contact = () => {
             </AnimateOnScroll>
 
             {/* Contact Form */}
-            <AnimateOnScroll className="bg-white rounded-xl shadow-lg p-8" style={{ transitionDelay: '200ms' }}>
-              <h3 className="text-2xl font-bold text-slate-800 mb-6">Send a Message</h3>
+            <AnimateOnScroll className="bg-white dark:bg-slate-800 rounded-xl shadow-lg p-8" style={{ transitionDelay: '200ms' }}>
+              <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-200 mb-6">Send a Message</h3>
 
               {isSubmitted ? (
                   <div className="text-center py-8 transition-opacity duration-300">
                     <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                    <h4 className="text-xl font-semibold text-slate-800 mb-2">Message Sent!</h4>
-                    <p className="text-slate-600">Thank you for reaching out. I'll get back to you soon.</p>
+                    <h4 className="text-xl font-semibold text-slate-800 dark:text-slate-200 mb-2">Message Sent!</h4>
+                    <p className="text-slate-600 dark:text-slate-400">Thank you for reaching out. I'll get back to you soon.</p>
                   </div>
               ) : (
                   <form ref={form} onSubmit={handleSubmit} className="space-y-6">
                     {/* Form fields remain the same */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
+                        <label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                           Full Name
                         </label>
                         <input
@@ -155,12 +155,12 @@ const Contact = () => {
                             value={formData.name}
                             onChange={handleChange}
                             required
-                            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                            className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                             placeholder="Your name"
                         />
                       </div>
                       <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
+                        <label htmlFor="email" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                           Email Address
                         </label>
                         <input
@@ -170,14 +170,14 @@ const Contact = () => {
                             value={formData.email}
                             onChange={handleChange}
                             required
-                            className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                            className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                             placeholder="your.email@example.com"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label htmlFor="subject" className="block text-sm font-medium text-slate-700 mb-2">
+                      <label htmlFor="subject" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                         Subject
                       </label>
                       <input
@@ -187,13 +187,13 @@ const Contact = () => {
                           value={formData.subject}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                          className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                           placeholder="What's this about?"
                       />
                     </div>
 
                     <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">
+                      <label htmlFor="message" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
                         Message
                       </label>
                       <textarea
@@ -203,7 +203,7 @@ const Contact = () => {
                           onChange={handleChange}
                           required
                           rows={5}
-                          className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none"
+                          className="w-full px-4 py-3 border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none"
                           placeholder="Tell me about your project..."
                       />
                     </div>
