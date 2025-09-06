@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { X } from 'lucide-react';
+import AnimateOnScroll from './AnimateOnScroll';
 
 // Define an interface for the project object for type safety
 interface Project {
@@ -58,44 +59,45 @@ const Portfolio = () => {
   return (
       <section id="portfolio" className="py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <AnimateOnScroll className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">Portfolio</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               A showcase of projects that demonstrate my expertise in full-stack development,
               UI/UX design, and problem-solving capabilities.
             </p>
-          </div>
+          </AnimateOnScroll>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {projects.map((project) => (
-                <div
-                    key={project.id}
-                    className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer"
-                    onClick={() => setSelectedProject(project)}
-                >
-                  <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-48 object-cover"
-                  />
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold text-slate-800 mb-2">{project.title}</h3>
-                    <p className="text-slate-600 mb-4">{project.description}</p>
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {project.technologies.slice(0, 3).map((tech) => (
-                          <span key={tech} className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">
-                      {tech}
-                    </span>
-                      ))}
-                      {project.technologies.length > 3 && (
-                          <span className="text-slate-500 text-sm">+{project.technologies.length - 3} more</span>
-                      )}
-                    </div>
-                    <div className="flex gap-3">
+            {projects.map((project, index) => (
+                <AnimateOnScroll key={project.id} style={{ transitionDelay: `${index * 100}ms` }}>
+                  <div
+                      className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer h-full"
+                      onClick={() => setSelectedProject(project)}
+                  >
+                    <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-48 object-cover"
+                    />
+                    <div className="p-6">
+                      <h3 className="text-xl font-semibold text-slate-800 mb-2">{project.title}</h3>
+                      <p className="text-slate-600 mb-4">{project.description}</p>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {project.technologies.slice(0, 3).map((tech) => (
+                            <span key={tech} className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">
+                        {tech}
+                      </span>
+                        ))}
+                        {project.technologies.length > 3 && (
+                            <span className="text-slate-500 text-sm">+{project.technologies.length - 3} more</span>
+                        )}
+                      </div>
+                      <div className="flex gap-3">
 
+                      </div>
                     </div>
                   </div>
-                </div>
+                </AnimateOnScroll>
             ))}
           </div>
 

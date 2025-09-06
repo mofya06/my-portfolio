@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { Mail, Phone, MapPin, Send, CheckCircle, Loader2, AlertTriangle } from 'lucide-react';
+import AnimateOnScroll from './AnimateOnScroll';
 
 const Contact = () => {
   const form = useRef<HTMLFormElement>(null);
@@ -77,58 +78,60 @@ const Contact = () => {
   return (
       <section id="contact" className="py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <AnimateOnScroll className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">Get In Touch</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               Ready to start your next project? Let's discuss how we can work together to bring your ideas to life.
             </p>
-          </div>
+          </AnimateOnScroll>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Information */}
-            <div>
-              <h3 className="text-2xl font-bold text-slate-800 mb-8">Let's Connect</h3>
-              <p className="text-slate-600 mb-8 leading-relaxed">
-                I'm always open to discussing new opportunities, interesting projects,
-                or just having a chat about technology and development. Feel free to reach out!
-              </p>
+            <AnimateOnScroll>
+              <div>
+                <h3 className="text-2xl font-bold text-slate-800 mb-8">Let's Connect</h3>
+                <p className="text-slate-600 mb-8 leading-relaxed">
+                  I'm always open to discussing new opportunities, interesting projects,
+                  or just having a chat about technology and development. Feel free to reach out!
+                </p>
 
-              <div className="space-y-6">
-                {contactInfo.map((info) => (
-                    <div key={info.label} className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                        <info.icon className="w-6 h-6 text-blue-600" />
+                <div className="space-y-6">
+                  {contactInfo.map((info) => (
+                      <div key={info.label} className="flex items-center gap-4">
+                        <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                          <info.icon className="w-6 h-6 text-blue-600" />
+                        </div>
+                        <div>
+                          <p className="font-medium text-slate-800">{info.label}</p>
+                          {info.href ? (
+                              <a
+                                  href={info.href}
+                                  className="text-slate-600 hover:text-blue-600 transition-colors duration-200"
+                              >
+                                {info.value}
+                              </a>
+                          ) : (
+                              <p className="text-slate-600">{info.value}</p>
+                          )}
+                        </div>
                       </div>
-                      <div>
-                        <p className="font-medium text-slate-800">{info.label}</p>
-                        {info.href ? (
-                            <a
-                                href={info.href}
-                                className="text-slate-600 hover:text-blue-600 transition-colors duration-200"
-                            >
-                              {info.value}
-                            </a>
-                        ) : (
-                            <p className="text-slate-600">{info.value}</p>
-                        )}
-                      </div>
-                    </div>
-                ))}
-              </div>
+                  ))}
+                </div>
 
-              <div className="mt-8 p-6 bg-blue-50 rounded-xl">
-                <h4 className="font-semibold text-slate-800 mb-2">Available for:</h4>
-                <ul className="text-slate-600 space-y-1">
-                  <li>• Full-time opportunities</li>
-                  <li>• Freelance projects</li>
-                  <li>• Consulting & mentoring</li>
-                  <li>• Open source collaboration</li>
-                </ul>
+                <div className="mt-8 p-6 bg-blue-50 rounded-xl">
+                  <h4 className="font-semibold text-slate-800 mb-2">Available for:</h4>
+                  <ul className="text-slate-600 space-y-1">
+                    <li>• Full-time opportunities</li>
+                    <li>• Freelance projects</li>
+                    <li>• Consulting & mentoring</li>
+                    <li>• Open source collaboration</li>
+                  </ul>
+                </div>
               </div>
-            </div>
+            </AnimateOnScroll>
 
             {/* Contact Form */}
-            <div className="bg-white rounded-xl shadow-lg p-8">
+            <AnimateOnScroll className="bg-white rounded-xl shadow-lg p-8" style={{ transitionDelay: '200ms' }}>
               <h3 className="text-2xl font-bold text-slate-800 mb-6">Send a Message</h3>
 
               {isSubmitted ? (
@@ -232,7 +235,7 @@ const Contact = () => {
                     </button>
                   </form>
               )}
-            </div>
+            </AnimateOnScroll>
           </div>
         </div>
       </section>
